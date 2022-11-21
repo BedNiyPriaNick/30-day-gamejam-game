@@ -607,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   player: {fileID: 73776415}
-  speed: 2
+  speed: 5
   distance: 5
   types: 1
   offset: 90
