@@ -23,14 +23,17 @@ public class Bullet : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                //hitInfo.collider.GetComponent<EnemyStatistics>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
             {
-                //hitInfo.collider.GetComponent<PlayerStatistics>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Player>().TakeDamage(damage);
             }
             Destroy(gameObject);
         }
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        if(enemyBullet)
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        else
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 }
