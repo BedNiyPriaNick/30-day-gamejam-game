@@ -15,6 +15,6 @@ public class PlayerLook : MonoBehaviour
     {
         Vector3 direction = cam.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        this.transform.rotation = Quaternion.Euler(0f, 0f, angle + -90);
+        this.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
     }
 }

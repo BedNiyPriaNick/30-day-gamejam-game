@@ -34,6 +34,6 @@ public class Bullet : MonoBehaviour
         if(enemyBullet)
             transform.Translate(Vector2.down * speed * Time.deltaTime);
         else
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 }
