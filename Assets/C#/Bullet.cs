@@ -23,11 +23,11 @@ public class Bullet : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Enemy>()?.TakeDamage(damage);
             }
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
             {
-                hitInfo.collider.GetComponent<Player>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Player>()?.TakeDamage(damage);
             }
             Destroy(gameObject);
         }

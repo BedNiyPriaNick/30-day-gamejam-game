@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
         Instantiate(bullet, shotPoint.position, transform.parent.rotation);
         timeBtwShots = startTimeBtwShots;
