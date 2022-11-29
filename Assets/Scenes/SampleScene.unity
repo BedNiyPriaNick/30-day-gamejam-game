@@ -319,6 +319,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &73023485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73023486}
+  m_Layer: 10
+  m_Name: holdPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73023486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73023485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.75, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 73776415}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73776412
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,8 +381,8 @@ Transform:
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children:
   - {fileID: 1955605258}
-  - {fileID: 1970781450}
   - {fileID: 220057235}
+  - {fileID: 73023486}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
@@ -417,6 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   isInvulnerable: 1
+  holdPoint: {fileID: 73023486}
   speed: 6
 --- !u!95 &73776420
 Animator:
@@ -449,9 +480,9 @@ GameObject:
   - component: {fileID: 220057237}
   - component: {fileID: 220057236}
   - component: {fileID: 220057238}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: punching_arm
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +500,7 @@ Transform:
   m_Children:
   - {fileID: 916353148}
   m_Father: {fileID: 73776415}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &220057236
 MonoBehaviour:
@@ -1159,7 +1190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 851766523}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: shotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -1189,7 +1220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916353148}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: punchPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2185,9 +2216,10 @@ GameObject:
   - component: {fileID: 1970781450}
   - component: {fileID: 1970781451}
   - component: {fileID: 1970781452}
-  m_Layer: 10
+  - component: {fileID: 1970781453}
+  m_Layer: 11
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2199,13 +2231,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970781449}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: 0.13, z: 1}
-  m_LocalScale: {x: 0.9833203, y: 0.9272735, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.70710784}
+  m_LocalPosition: {x: -4.12, y: -0.010008335, z: 1}
+  m_LocalScale: {x: 0.9833203, y: -0.9272735, z: 1}
   m_Children:
   - {fileID: 851766523}
-  m_Father: {fileID: 73776415}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1970781451
 SpriteRenderer:
@@ -2274,6 +2306,32 @@ MonoBehaviour:
   shotPoint: {fileID: 851766523}
   startTimeBtwShots: 1
   enemyGun: 0
+--- !u!61 &1970781453
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970781449}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6, y: 1.26}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 1.26}
+  m_EdgeRadius: 0
 --- !u!1 &1999302079
 GameObject:
   m_ObjectHideFlags: 0

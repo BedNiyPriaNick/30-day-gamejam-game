@@ -34,7 +34,14 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(bullet, shotPoint.position, transform.parent.rotation);
+        try
+        {
+            Instantiate(bullet, shotPoint.position, transform.parent.rotation);
+        }
+        catch
+        {
+            Debug.Log("Gun can't shoot");
+        }
         timeBtwShots = startTimeBtwShots;
     }
 }

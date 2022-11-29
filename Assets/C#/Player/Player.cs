@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int health;
     [SerializeField] private bool isInvulnerable;
+    [SerializeField] private Transform holdPoint;
 
     [Space]
 
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+
+    #region my_fun
 
     private void Start()
     {
@@ -65,5 +68,16 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+    }
+
+    #endregion
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Weapon")
+        {
+            collision.gameObject.transform.parent = this.gameObject.transform;
+            collision.gameObject.transform.position = holdPoint.position;
+        }
     }
 }
