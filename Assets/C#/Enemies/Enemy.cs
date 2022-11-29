@@ -9,28 +9,30 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float speed;
     [SerializeField] private float distance;
-    private enum Type { Punching, Shooting };
-    [SerializeField] private Type types;
 
     [SerializeField] private float offset;
 
     private void Update()
     {
-        if (types == Type.Punching)
+        if (Vector2.Distance(player.position, transform.position) > distance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (types == Type.Shooting)
+        else if(Vector2.Distance(player.position, transform.position) < distance)
         {
-            if (Vector2.Distance(player.position, transform.position) > distance && Vector2.Distance(player.position, transform.position) <= distance*2)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            }
+            transform.position = Vector2.MoveTowards(transform.position, -player.position, speed / 2 * Time.deltaTime);
         }
 
-        Vector3 direction = player.position - this.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        this.transform.rotation = Quaternion.Euler(0f, 0f, angle + offset);
+        try
+        {
+            Vector3 direction = player.position - this.transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            this.transform.rotation = Quaternion.Euler(0f, 0f, angle + offset);
+        }
+        catch
+        {
+            Debug.Log("Oh. Not good. No player!");
+        }
 
         if (health <= 0)
             Destroy(this.gameObject);

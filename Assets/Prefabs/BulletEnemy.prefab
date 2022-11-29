@@ -124,8 +124,8 @@ MonoBehaviour:
   speed: 20
   lifeTime: 2
   distance: 0
-  damage: 40
+  damage: 100
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   enemyBullet: 1

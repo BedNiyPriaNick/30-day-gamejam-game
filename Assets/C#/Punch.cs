@@ -16,6 +16,13 @@ public class Punch : MonoBehaviour
 
     private float timeBtwShots;
 
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (timeBtwShots <= 0)
@@ -51,15 +58,7 @@ public class Punch : MonoBehaviour
         }
         else
         {
-            Collider2D[] hitIfo = Physics2D.OverlapCircleAll(punchPoint.position, radius, enemy_mask);
-
-            if (hitIfo != null)
-            {
-                for (int i = 0; i < hitIfo.Length; i++)
-                {
-                    hitIfo[i].GetComponent<Enemy>().TakeDamage(damage);
-                }
-            }
+            anim.SetTrigger("punch");
         }
         timeBtwShots = startTimeBtwPunch;
     }
@@ -67,5 +66,19 @@ public class Punch : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(punchPoint.position, radius);
+    }
+
+    public void PlayerPunch()
+    {
+        Collider2D[] hitIfo = Physics2D.OverlapCircleAll(punchPoint.position, radius, enemy_mask);
+
+        if (hitIfo != null)
+        {
+            for (int i = 0; i < hitIfo.Length; i++)
+            {
+                hitIfo[i].GetComponent<Enemy>().TakeDamage(damage);
+            }
+        }
+        timeBtwShots = startTimeBtwPunch;
     }
 }
