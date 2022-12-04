@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private Transform holdPoint;
     [SerializeField] private LayerMask weapon;
-    [SerializeField] private float throwObject;
     Collider2D hit;
 
     private Rigidbody2D rb;
@@ -118,6 +117,6 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawSphere(transform.position, distance);
+        Gizmos.DrawWireSphere(transform.position, distance);
     }
 }
