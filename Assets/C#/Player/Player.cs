@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int health;
     [SerializeField] private bool isInvulnerable;
-    [SerializeField] private Transform holdPoint;
 
     [Space]
 
@@ -15,6 +14,16 @@ public class Player : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
     private Vector2 direction;
+
+    [Space]
+
+    [Header("WeaponHold")]
+    [SerializeField] private bool hold;
+    [SerializeField] private float distance;
+    [SerializeField] private Transform holdPoint;
+    [SerializeField] private LayerMask weapon;
+    [SerializeField] private float throwObject;
+    Collider2D hit;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -32,6 +41,7 @@ public class Player : MonoBehaviour
     {
         HP();
         PlayerLook();
+        TakeWeapon();
     }
 
     private void FixedUpdate()
@@ -65,6 +75,39 @@ public class Player : MonoBehaviour
             this.gameObject.SetActive(false);
     }
 
+    private void TakeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (!hold)
+            {
+                Physics2D.queriesStartInColliders = false;
+                hit = Physics2D.OverlapCircle(holdPoint.position, distance, weapon);
+
+                if(hit != null && hit.tag == "Weapon")
+                {
+                    hold = true;
+                    hit.gameObject.transform.SetParent(this.gameObject.transform);
+                }
+            }
+            else
+            {
+                hold = false;
+
+                if (hit != null)
+                {
+                    hit.gameObject.transform.parent = null;
+                }
+            }
+        }
+
+        if (hold)
+        {
+            hit.gameObject.transform.position = holdPoint.position;
+            hit.gameObject.transform.rotation = transform.rotation;
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -72,12 +115,9 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnDrawGizmos()
     {
-        if(collision.gameObject.tag == "Weapon")
-        {
-            collision.gameObject.transform.parent = this.gameObject.transform;
-            collision.gameObject.transform.position = holdPoint.position;
-        }
+        Gizmos.color = Color.white;
+        Gizmos.DrawSphere(transform.position, distance);
     }
 }

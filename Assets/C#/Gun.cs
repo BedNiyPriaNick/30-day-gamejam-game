@@ -17,11 +17,7 @@ public class Gun : MonoBehaviour
     {
         if(timeBtwShots <= 0)
         {
-            if (Input.GetMouseButtonDown(0) && !enemyGun)
-            {
-                Shoot();
-            }
-            else if (enemyGun)
+            if (Input.GetMouseButtonDown(0) || enemyGun)
             {
                 Shoot();
             }
