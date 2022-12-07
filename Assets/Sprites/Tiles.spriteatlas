@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tiles
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 948eae84e61352148bde2e42b26ed72c, type: 3}
+    - {fileID: 2800000, guid: 408cb5757da501046acaa31e33becb9a, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -5062486230716756072, guid: 948eae84e61352148bde2e42b26ed72c, type: 3}
+  - {fileID: -8377130690987618698, guid: 948eae84e61352148bde2e42b26ed72c, type: 3}
+  - {fileID: -4684333735789482159, guid: 948eae84e61352148bde2e42b26ed72c, type: 3}
+  - {fileID: 7223950226953391895, guid: 948eae84e61352148bde2e42b26ed72c, type: 3}
+  - {fileID: 6059639155888417348, guid: 408cb5757da501046acaa31e33becb9a, type: 3}
+  - {fileID: -4289654968448028074, guid: 408cb5757da501046acaa31e33becb9a, type: 3}
+  - {fileID: -1869328153477114120, guid: 408cb5757da501046acaa31e33becb9a, type: 3}
+  - {fileID: 6425203255335965193, guid: 408cb5757da501046acaa31e33becb9a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - wood
+  - grass
+  - rock
+  - dirt
+  - web
+  - log
+  - tree
+  - bush
+  m_Tag: Tiles
+  m_IsVariant: 0
