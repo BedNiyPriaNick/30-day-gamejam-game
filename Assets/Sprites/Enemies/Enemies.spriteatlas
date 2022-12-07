@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enemies
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 856e67b9a3f1f074cb3149213edc07db, type: 3}
+    - {fileID: 2800000, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+    - {fileID: 2800000, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+    - {fileID: 2800000, guid: 562cd818eb93a5f4383fa6bbc4ec61fa, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -3744100058243599207, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: -1212334443205891351, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: 5603113115567559687, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: 8311370823919354504, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: -4630154629489418604, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: -2178714219461043148, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: 7535632335433649916, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: 5889707411565617649, guid: 3b7de9d500c1594429cfd7d352788c93, type: 3}
+  - {fileID: 2731795287329381114, guid: 856e67b9a3f1f074cb3149213edc07db, type: 3}
+  - {fileID: 1961183383047197949, guid: 856e67b9a3f1f074cb3149213edc07db, type: 3}
+  - {fileID: 3229708652140166120, guid: 856e67b9a3f1f074cb3149213edc07db, type: 3}
+  - {fileID: 876784968147787122, guid: 856e67b9a3f1f074cb3149213edc07db, type: 3}
+  - {fileID: -2324838971625063279, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+  - {fileID: 1589528049533691357, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+  - {fileID: 3598359684408337776, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+  - {fileID: 1863660961960515039, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+  - {fileID: 740628756080914756, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+  - {fileID: 2464127692501900693, guid: 6a58f85c619b8124485ef693334a20de, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - shoters_0
+  - shoters_1
+  - shoters_2
+  - shoters_3
+  - shoters_4
+  - shoters_5
+  - shoters_6
+  - shoters_7
+  - arm
+  - gun
+  - enemy
+  - AKA47
+  - bug_3
+  - bug_1
+  - bug1_1
+  - bug1_2
+  - bug
+  - insects_2
+  m_Tag: Enemies
+  m_IsVariant: 0

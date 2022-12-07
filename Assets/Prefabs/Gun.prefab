@@ -155,5 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3861703027191003652, guid: 72950a4ebe29192409b36aa6dd1724f2, type: 3}
   shotPoint: {fileID: 7579717834605187012}
-  startTimeBtwShots: 1
+  startTimeBtwShots: 0.2
   enemyGun: 0
+  enemy: {fileID: 0}

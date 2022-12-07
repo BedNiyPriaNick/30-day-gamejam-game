@@ -13,11 +13,13 @@ public class Gun : MonoBehaviour
 
     private float timeBtwShots;
 
+    [SerializeField] Enemy enemy;
+
     private void Update()
     {
         if(timeBtwShots <= 0)
         {
-            if (Input.GetMouseButtonDown(0) || enemyGun)
+            if (Input.GetMouseButtonDown(0) || (enemyGun && !enemy.unfollowPlayer))
             {
                 Shoot();
             }
@@ -32,7 +34,7 @@ public class Gun : MonoBehaviour
     {
         try
         {
-            Instantiate(bullet, shotPoint.position, transform.parent.rotation);
+            Instantiate(bullet, transform.position, transform.parent.rotation);
         }
         catch
         {

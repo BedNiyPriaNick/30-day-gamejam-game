@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
         anim.SetFloat("moveVector.x", Mathf.Abs(direction.x));
         anim.SetFloat("moveVector.y", Mathf.Abs(direction.y));
 
-        rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
+        rb.MovePosition((Vector2)rb.position + direction * speed * Time.deltaTime);
     }
 
     private void HP()

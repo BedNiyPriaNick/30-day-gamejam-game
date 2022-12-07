@@ -12,19 +12,27 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float offset;
 
+    [HideInInspector] public bool unfollowPlayer;
+
     private void Update()
     {
-        if (Vector2.Distance(player.position, transform.position) > distance)
+        if (health <= 0)
+            Destroy(this.gameObject);
+
+        if (Vector2.Distance((Vector2)player.position, (Vector2)transform.position) > distance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            unfollowPlayer = true;
         }
-        else if(Vector2.Distance(player.position, transform.position) < distance)
+        if (Vector2.Distance((Vector2)player.position, (Vector2)transform.position) < distance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, -player.position, speed / 2 * Time.deltaTime);
+            unfollowPlayer = false;
+            transform.position = Vector2.MoveTowards((Vector2)transform.position, (Vector2)player.position, speed * Time.deltaTime);
         }
 
         try
         {
+            if (unfollowPlayer)
+                return;
             Vector3 direction = player.position - this.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             this.transform.rotation = Quaternion.Euler(0f, 0f, angle + offset);
@@ -33,9 +41,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Oh. Not good. No player!");
         }
-
-        if (health <= 0)
-            Destroy(this.gameObject);
     }
 
     public void TakeDamage(int damage)
