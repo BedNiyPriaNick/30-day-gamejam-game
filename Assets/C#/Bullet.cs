@@ -29,11 +29,8 @@ public class Bullet : MonoBehaviour
             {
                 hitInfo.collider.GetComponent<Player>()?.TakeDamage(damage);
             }
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
-        if(enemyBullet)
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
-        else
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 }

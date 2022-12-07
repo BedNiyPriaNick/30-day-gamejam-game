@@ -130,6 +130,7 @@ MonoBehaviour:
   shotPoint: {fileID: 1810951631474007060}
   startTimeBtwShots: 3
   enemyGun: 1
+  enemy: {fileID: 1810951630433043876}
 --- !u!1 &1810951630433043872
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ GameObject:
   - component: {fileID: 1810951630433043879}
   - component: {fileID: 1810951630433043876}
   - component: {fileID: 1810951630433043883}
+  - component: {fileID: -196132559754657114}
   m_Layer: 8
   m_Name: Killers
   m_TagString: Enemy
@@ -208,6 +210,7 @@ MonoBehaviour:
   speed: 3
   distance: 5
   offset: 90
+  unfollowPlayer: 0
 --- !u!95 &1810951630433043883
 Animator:
   serializedVersion: 3
@@ -227,6 +230,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-196132559754657114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810951630433043872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043fcc85473fab14ea32588d889ad267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1810951631474007061
 GameObject:
   m_ObjectHideFlags: 0

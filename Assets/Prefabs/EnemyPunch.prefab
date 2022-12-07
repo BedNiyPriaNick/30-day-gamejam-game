@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 3323490080710163186}
   - component: {fileID: 3323490080710163187}
   - component: {fileID: 3323490080710163196}
+  - component: {fileID: -7988326041878907582}
   m_Layer: 8
   m_Name: EnemyPunch
   m_TagString: Enemy
@@ -82,6 +83,7 @@ MonoBehaviour:
   speed: 2
   distance: 1
   offset: 90
+  unfollowPlayer: 0
 --- !u!61 &3323490080710163196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108,6 +110,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3783758, y: 0.7802975}
   m_EdgeRadius: 0
+--- !u!114 &-7988326041878907582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323490080710163197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043fcc85473fab14ea32588d889ad267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3323490080975164935
 GameObject:
   m_ObjectHideFlags: 0

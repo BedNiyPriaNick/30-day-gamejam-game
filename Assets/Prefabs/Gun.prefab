@@ -157,3 +157,4 @@ MonoBehaviour:
   shotPoint: {fileID: 7579717834605187012}
   startTimeBtwShots: 0.2
   enemyGun: 0
+  enemy: {fileID: 0}
