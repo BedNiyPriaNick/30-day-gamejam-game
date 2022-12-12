@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4806783335338982226}
   - component: {fileID: 4806783335338982225}
   - component: {fileID: 4806783335338982227}
+  - component: {fileID: 5746494898925082796}
   m_Layer: 0
   m_Name: Danger
   m_TagString: Untagged
@@ -101,3 +102,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5746494898925082796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806783335338982224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e5a11b9e8f0a94a96dcafdc4d473ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slice: {fileID: 3641005122935392960, guid: 32a92e59e8532fe43be8964013f3c94b, type: 3}
