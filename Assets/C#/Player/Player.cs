@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    [SerializeField] private GameObject walkSound, hurt;
+
     #region my_fun
 
     private void Start()
@@ -41,6 +43,15 @@ public class Player : MonoBehaviour
         HP();
         PlayerLook();
         TakeWeapon();
+
+        if(direction.x != 0f || direction.y != 0f)
+        {
+            walkSound.SetActive(true);
+        }
+        else
+        {
+            walkSound.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
