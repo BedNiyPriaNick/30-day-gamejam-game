@@ -15,7 +15,7 @@ public class Boss : MonoBehaviour
     GameObject[] enemies;
     [SerializeField] private GameObject[] points;
 
-    [SerializeField] private GameObject slice, musicBattle, swordSound;
+    [SerializeField] private GameObject slice, musicBattle, swordSound, hurts;
 
     private void Start()
     {
@@ -55,6 +55,7 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Instantiate(hurts, player.position, Quaternion.identity);
         health -= damage;
     }
 

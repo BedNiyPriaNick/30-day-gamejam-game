@@ -17178,6 +17178,7 @@ MonoBehaviour:
     type: 3}
   swordSound: {fileID: 8714791866322047185, guid: 41533929b55f14845ac5c8270e89fb49,
     type: 3}
+  hurts: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407, type: 3}
   damage: 20
 --- !u!1 &1850675970
 GameObject:
@@ -18609,6 +18610,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810951630433043876, guid: 6814a1dd9bfe8ec41a3d831c56b0307a,
         type: 3}
+      propertyPath: hurts
+      value: 
+      objectReference: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407,
+        type: 3}
+    - target: {fileID: 1810951630433043876, guid: 6814a1dd9bfe8ec41a3d831c56b0307a,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 73776415}
@@ -18752,6 +18759,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2171724570505715365, guid: 1ec87dc8f75934c49a386c0abdbd9715,
         type: 3}
+      propertyPath: hurts
+      value: 
+      objectReference: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407,
+        type: 3}
+    - target: {fileID: 2171724570505715365, guid: 1ec87dc8f75934c49a386c0abdbd9715,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 73776415}
@@ -18881,6 +18894,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3323490080710163187, guid: 965945021763b4d49bc2d83dedf97b27,
         type: 3}
+      propertyPath: hurts
+      value: 
+      objectReference: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407,
+        type: 3}
+    - target: {fileID: 3323490080710163187, guid: 965945021763b4d49bc2d83dedf97b27,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 73776415}
@@ -18898,6 +18917,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3692290403087118917, guid: d0811f7aeadf4ea44bfe2e87f2ddbdfd,
+        type: 3}
+      propertyPath: hurts
+      value: 
+      objectReference: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407,
+        type: 3}
     - target: {fileID: 3692290403087118917, guid: d0811f7aeadf4ea44bfe2e87f2ddbdfd,
         type: 3}
       propertyPath: player
@@ -19027,6 +19052,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4035011282895953318, guid: bd09e2f9ca51c6144a057c418ccdfb6c,
+        type: 3}
+      propertyPath: hurts
+      value: 
+      objectReference: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407,
+        type: 3}
     - target: {fileID: 4035011282895953318, guid: bd09e2f9ca51c6144a057c418ccdfb6c,
         type: 3}
       propertyPath: player
@@ -19302,6 +19333,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bug_fast
       objectReference: {fileID: 0}
+    - target: {fileID: 8904844747420738567, guid: a96f825d1d989ce43b6395df8ba69abc,
+        type: 3}
+      propertyPath: hurts
+      value: 
+      objectReference: {fileID: 5685788554660909888, guid: 3d5bb65a8ae54a042a2e5066d8758407,
+        type: 3}
     - target: {fileID: 8904844747420738567, guid: a96f825d1d989ce43b6395df8ba69abc,
         type: 3}
       propertyPath: player

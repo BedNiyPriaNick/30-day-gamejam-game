@@ -219,6 +219,7 @@ MonoBehaviour:
     m_Bits: 2048
   walkSound: {fileID: 5352232853257023130, guid: 248fc2af640dc54499066f0e786273b8,
     type: 3}
+  hurt: {fileID: 7017883783033248451, guid: 007db2a474c91cb42b1712c77b3775fa, type: 3}
 --- !u!95 &1997541588456054108
 Animator:
   serializedVersion: 3

@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-    [SerializeField] private GameObject walkSound;
+    [SerializeField] private GameObject walkSound, hurt;
 
     #region my_fun
 
