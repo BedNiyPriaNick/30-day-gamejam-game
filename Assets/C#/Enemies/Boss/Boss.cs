@@ -1,19 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
-    [HideInInspector] public int health;
+    public int health;
     [SerializeField] private Transform player;
 
-    [HideInInspector] public bool isInvulnerable;
+    public bool isInvulnerable;
 
     Animator anim;
 
+    GameObject[] enemies;
+    [SerializeField] private GameObject[] points;
+
+    [SerializeField] private GameObject slice, musicBattle, swordSound;
+
     private void Start()
     {
+        Instantiate(musicBattle, player.position, Quaternion.identity);
         anim = GetComponent<Animator>();
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].SetActive(false);
+        }
     }
 
     public void LookAtPlayer()
@@ -22,17 +34,50 @@ public class Boss : MonoBehaviour
         transform.LookAt(dir);
     }
 
+    public void Attacking()
+    {
+        for(int i = 0; i < points.Length; i++)
+        {
+            Instantiate(slice, points[i].transform.position, Quaternion.identity);
+        }
+    }
+
     private void Update()
     {
-        if (isInvulnerable)
-            return;
+        if (health <= 0)
+            SceneManager.LoadScene("GameEnd");
 
-        else if (health <= 0 && !isInvulnerable)
-            Destroy(gameObject);
+        if(health <= 200)
+        {
+            anim.SetBool("SecondForm", true);
+        }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+    }
+
+    public void CanAttack()
+    {
+        attack = true;
+    }
+
+    public void NoAttack()
+    {
+        attack = false;
+    }
+
+    bool attack;
+
+    [SerializeField] private int damage;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && attack)
+        {
+            Instantiate(swordSound, player.position, Quaternion.identity);
+            collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+        }
     }
 }

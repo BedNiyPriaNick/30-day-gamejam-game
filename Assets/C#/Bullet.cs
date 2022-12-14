@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
         if (hitInfo.collider != null)
         {
-            if (hitInfo.collider.CompareTag("Enemy"))
+            if (hitInfo.collider.CompareTag("Enemy") || hitInfo.collider.CompareTag("Boss"))
             {
                 hitInfo.collider.GetComponent<Enemy>()?.TakeDamage(damage);
                 hitInfo.collider.GetComponent<Boss>()?.TakeDamage(damage);

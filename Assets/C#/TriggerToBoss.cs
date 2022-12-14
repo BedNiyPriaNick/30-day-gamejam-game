@@ -11,8 +11,8 @@ public class TriggerToBoss : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.transform.position = tp.transform.position;
-            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
             samurai.SetActive(true);
+            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
         }
     }
 }

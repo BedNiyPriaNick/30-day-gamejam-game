@@ -12,9 +12,10 @@ public class Huh : StateMachineBehaviour
         boss = animator.GetComponent<Boss>();
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        boss.LookAtPlayer();
+
         if (boss.health <= boss.health / 3)
         {
             animator.SetBool("SecondForm", true);

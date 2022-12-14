@@ -13,4 +13,21 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    [SerializeField] private GameObject panel;
+
+    private void OpenMenu()
+    {
+        try
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                panel.SetActive(true);
+            }
+        }
+        catch
+        {
+
+        }
+    }
 }

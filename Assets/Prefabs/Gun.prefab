@@ -102,7 +102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8543202917101443340, guid: 403678edbf0bb8d4baf1a7697a9fe63f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -155,6 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3861703027191003652, guid: 72950a4ebe29192409b36aa6dd1724f2, type: 3}
   shotPoint: {fileID: 7579717834605187012}
-  startTimeBtwShots: 0.2
+  startTimeBtwShots: 0.5
   enemyGun: 0
   enemy: {fileID: 0}
+  shootSound: {fileID: 1636878741318404612, guid: 135d5b616a460c946ba89ef41fb2ec71,
+    type: 3}

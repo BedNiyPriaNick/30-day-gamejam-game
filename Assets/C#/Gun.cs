@@ -15,6 +15,8 @@ public class Gun : MonoBehaviour
 
     [SerializeField] Enemy enemy;
 
+    [SerializeField] private GameObject shootSound;
+
     private void Update()
     {
         if(timeBtwShots <= 0)
@@ -34,6 +36,7 @@ public class Gun : MonoBehaviour
     {
         try
         {
+            Instantiate(shootSound, transform.position, Quaternion.identity);
             Instantiate(bullet, transform.position, transform.parent.rotation);
         }
         catch
