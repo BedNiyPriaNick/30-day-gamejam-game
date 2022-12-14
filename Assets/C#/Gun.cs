@@ -13,15 +13,13 @@ public class Gun : MonoBehaviour
 
     private float timeBtwShots;
 
+    [SerializeField] private GameObject shootSound;
+
     private void Update()
     {
         if(timeBtwShots <= 0)
         {
-            if (Input.GetMouseButtonDown(0) && !enemyGun)
-            {
-                Shoot();
-            }
-            else if (enemyGun)
+            if (Input.GetMouseButtonDown(0) || enemyGun)
             {
                 Shoot();
             }
@@ -34,7 +32,15 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(bullet, shotPoint.position, transform.parent.rotation);
+        try
+        {
+            Instantiate(shootSound, transform.position, Quaternion.identity);
+            Instantiate(bullet, transform.position, transform.parent.rotation);
+        }
+        catch
+        {
+            Debug.Log("Gun can't shoot");
+        }
         timeBtwShots = startTimeBtwShots;
     }
 }

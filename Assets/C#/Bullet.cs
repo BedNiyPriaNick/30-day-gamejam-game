@@ -21,19 +21,17 @@ public class Bullet : MonoBehaviour
 
         if (hitInfo.collider != null)
         {
-            if (hitInfo.collider.CompareTag("Enemy"))
+            if (hitInfo.collider.CompareTag("Enemy") || hitInfo.collider.CompareTag("Boss"))
             {
                 hitInfo.collider.GetComponent<Enemy>()?.TakeDamage(damage);
+                hitInfo.collider.GetComponent<Boss>()?.TakeDamage(damage);
             }
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
             {
                 hitInfo.collider.GetComponent<Player>()?.TakeDamage(damage);
             }
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
-        if(enemyBullet)
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
-        else
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 }

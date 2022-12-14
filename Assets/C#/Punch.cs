@@ -76,7 +76,8 @@ public class Punch : MonoBehaviour
         {
             for (int i = 0; i < hitIfo.Length; i++)
             {
-                hitIfo[i].GetComponent<Enemy>().TakeDamage(damage);
+                hitIfo[i].GetComponent<Enemy>()?.TakeDamage(damage);
+                hitIfo[i].GetComponent<Boss>()?.TakeDamage(damage);
             }
         }
         timeBtwShots = startTimeBtwPunch;

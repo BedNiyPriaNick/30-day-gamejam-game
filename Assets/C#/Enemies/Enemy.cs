@@ -12,16 +12,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float offset;
 
+    [SerializeField] private GameObject hurts;
+
     private void Update()
     {
-        if (Vector2.Distance(player.position, transform.position) > distance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
-        else if(Vector2.Distance(player.position, transform.position) < distance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, -player.position, speed / 2 * Time.deltaTime);
-        }
+        if (health <= 0)
+            Destroy(this.gameObject);
+
+        transform.position = Vector2.MoveTowards((Vector2)transform.position, (Vector2)player.position, speed * Time.deltaTime);
 
         try
         {
@@ -33,13 +31,11 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Oh. Not good. No player!");
         }
-
-        if (health <= 0)
-            Destroy(this.gameObject);
     }
 
     public void TakeDamage(int damage)
     {
+        Instantiate(hurts, player.position, Quaternion.identity);
         health -= damage;
     }
 }
